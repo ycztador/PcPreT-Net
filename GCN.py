@@ -9,10 +9,10 @@ class GCNWithMLP(nn.Module):
 
         # GCN
         self.gcn_layers = nn.ModuleList()
-        self.gcn_layers.append(nn.Linear(in_dim, hidden_dim))  # 第1层
-        for _ in range(num_layers - 2):  # 中间层
+        self.gcn_layers.append(nn.Linear(in_dim, hidden_dim)) 
+        for _ in range(num_layers - 2):  
             self.gcn_layers.append(nn.Linear(hidden_dim, hidden_dim))
-        self.gcn_layers.append(nn.Linear(hidden_dim, gcn_out_dim))  # 第6层输出为 gcn_out_dim
+        self.gcn_layers.append(nn.Linear(hidden_dim, gcn_out_dim)) 
 
         # MLP
         self.mlp_head = nn.Sequential(
