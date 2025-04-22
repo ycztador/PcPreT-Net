@@ -34,7 +34,7 @@ for i in range(num_nodes):
 
 edges = []
 for i in range(num_nodes):
-    for j in range(i + 1, num_nodes):  # 避免重复添加
+    for j in range(i + 1, num_nodes): 
         if adjacency_matrix[i, j] > 0:
             G.add_edge(i, j)
             edges.append((i, j))
